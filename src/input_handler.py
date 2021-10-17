@@ -2,6 +2,8 @@ import args_handler as ah
 from os import *
 
 def handleInput(userinput):
+    if not userinput:
+        userinput = 'NAN'
     # gets all the stuff needed
     inputArray = str(userinput).split()
     command = inputArray[0]
@@ -57,3 +59,4 @@ def handleInput(userinput):
 
     else:
         print(command + ' is a invalid command')
+

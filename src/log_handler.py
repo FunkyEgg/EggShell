@@ -12,6 +12,8 @@ def clearLog():
 def writeLog(userinput):
     # apeends the command, input array and args to the log, this is usefull for debuging
     log = open(logFile, 'a')
+    if not userinput:
+        userinput = 'NAN'
 
     inputArray = str(userinput).split()
     command = inputArray[0]
