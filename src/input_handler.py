@@ -21,6 +21,7 @@ def handleInput(userinput):
             print('you need to supply a math equation')
             return
 
+        # invalid char list is used to get more specific error although the try statement is enough its to vauge on the error
         invalidChars = [
             '!', '@', '#', '$', '%', '^', '&', '_',
             'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
