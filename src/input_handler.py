@@ -15,11 +15,15 @@ def handleInput(userinput):
             _ = system('clear')
 
     elif command == 'do':
+        if not args:
+            print('you need to supply a math equation')
+            return
+
         invalidChars = [
-            '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_',
+            '!', '@', '#', '$', '%', '^', '&', '_',
             'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
             'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'W', 'Z',
-            ',', '.', '/', ';', "'", '[', ']', '\\',
+            ',', '.', ';', "'", '[', ']', '\\',
             '<', '>', '?', ':', '"', '{', '}', '|'
         ]
 
@@ -39,7 +43,10 @@ def handleInput(userinput):
         elif ' '.join(args).endswith('*') or ' '.join(args).endswith('+') or ' '.join(args).endswith('-') or ' '.join(args).endswith('/'):
             print('math cannot end with a operator')
         else:
-            print(eval(' '.join(args)))
+            try:
+                print(eval(' '.join(args)))
+            except:
+                print('invalid math make sure you typed it right')
 
     else:
         print(command + ' is a invalid command')
