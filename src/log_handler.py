@@ -4,11 +4,13 @@ import args_handler as ah
 logFile = 'log.eslog'
 
 def clearLog():
+    # writes a blank string to the file therefor clearing it
     log = open(logFile, 'w')
     log.write('')
     log.close()
 
 def writeLog(userinput):
+    # apeends the command, input array and args to the log, this is usefull for debuging
     log = open(logFile, 'a')
 
     inputArray = str(userinput).split()
