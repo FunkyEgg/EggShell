@@ -48,5 +48,12 @@ def handleInput(userinput):
             except:
                 print('invalid math make sure you typed it right')
 
+    elif command == 'color':
+        try:
+            if name == 'nt':
+                _ = system('color ' + args[0])
+        except:
+            print('invalid os or no color provided')
+
     else:
         print(command + ' is a invalid command')
