@@ -15,9 +15,6 @@ def handleInput(userinput):
             _ = system('clear')
 
     elif command == 'do':
-        # answer = eval(' '.join(args))
-        # print(answer)
-
         invalidChars = [
             '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_',
             'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
@@ -28,8 +25,21 @@ def handleInput(userinput):
 
         argStr = ''.join(args)
         errorCheck = list(argStr)
+        invalidCharDetected = False
 
-            
+        for i in errorCheck:
+            for x in invalidChars:
+                if x in i:
+                    invalidCharDetected = True
+                else:
+                    continue
+        
+        if invalidCharDetected == True:
+            print(' '.join(args) + ' is invalid math')
+        elif ' '.join(args).endswith('*') or ' '.join(args).endswith('+') or ' '.join(args).endswith('-') or ' '.join(args).endswith('/'):
+            print('math cannot end with a operator')
+        else:
+            print(eval(' '.join(args)))
 
     else:
         print(command + ' is a invalid command')
