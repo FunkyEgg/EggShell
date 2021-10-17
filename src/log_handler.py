@@ -23,7 +23,7 @@ def writeLog(userinput):
     log.write('\nCommand: ')
     log.write(str(command))
     log.write('\nArgs: ')
-    log.write(str(ah.setArgs(inputArray, command)))
+    log.write(str(ah.setArgs(inputArray)))
     log.write('\n\n')
 
     log.close()

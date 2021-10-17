@@ -5,8 +5,8 @@ def main():
     while True:
         userInput = input('>> ')
         
-        ih.handleInput(userInput)
         lh.writeLog(userInput)
+        ih.handleInput(userInput)
 
 if __name__ == '__main__':
     lh.clearLog()
