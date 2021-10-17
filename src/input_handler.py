@@ -15,7 +15,20 @@ def handleInput(userinput):
             _ = system('clear')
 
     elif command == 'do':
-        print(eval(' '.join(args)))
+        # answer = eval(' '.join(args))
+        # print(answer)
+
+        invalidChars = [
+            '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_',
+            'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+            'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'W', 'Z',
+            ',', '.', '/', ';', "'", '[', ']', '\\',
+            '<', '>', '?', ':', '"', '{', '}', '|'
+        ]
+
+        argStr = ''.join(args)
+        errorCheck = list(argStr)
+
             
 
     else:
