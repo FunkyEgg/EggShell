@@ -13,5 +13,10 @@ def handleInput(userinput):
             _ = system('cls')
         else:
             _ = system('clear')
+
+    elif command == 'do':
+        print(eval(' '.join(args)))
+            
+
     else:
         print(command + ' is a invalid command')
