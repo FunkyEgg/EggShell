@@ -9,6 +9,7 @@ def handleInput(userinput):
     command = inputArray[0]
     args = ah.setArgs(inputArray)
 
+    # clears the cli
     if command == 'cls' or command == 'clear':
         # depending on os name will run a seperate clear command
         if name == 'nt':
@@ -16,6 +17,7 @@ def handleInput(userinput):
         else:
             _ = system('clear')
 
+    # does math
     elif command == 'do':
         if not args:
             print('you need to supply a math equation')
@@ -51,6 +53,7 @@ def handleInput(userinput):
             except:
                 print('invalid math make sure you typed it right')
 
+    # allows support for windows cmd commands to run
     elif command == 'cmd':
         ucmd = ' '.join(args)
         try:
